@@ -23,7 +23,7 @@ npm install --save bootstrap
 
 * Instalar Angular Material Package na versão 12.
 ```
-npm install --save @angular/material@12 @angular/cdk@12
+ng add @angular/material@12
 ```
 
 
