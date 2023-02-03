@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Adicionar Produto</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline">
+    <mat-label>Produto</mat-label>
+    <input matInput placeholder="Digite o nome do produto">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Categoria</mat-label>
+    <mat-select placeholder="Selecione a categoria do produto">
+      <mat-option value="Frutas">Frutas</mat-option>
+      <mat-option value="Vegetais">Vegetais</mat-option>
+      <mat-option value="Legumes">Legumes</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Escolha uma data</mat-label>
+    <input matInput [matDatepicker]="picker" value="date | date:'dd/MM/yyyy'">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <label for=""><h1>Qualidade do Produto</h1></label>
+  <mat-radio-group class="example-radio-group">
+    <mat-radio-button class="example-radio-button" *ngFor="let qualidadeProd of qualidadeProdLista" [value]="qualidadeProd">
+      {{qualidadeProd}}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>
