@@ -19,6 +19,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { DialogComponent } from './dialog/dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +31,8 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

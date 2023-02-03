@@ -33,3 +33,8 @@ ng add @angular/material@12
 ```
 ng serve -o
 ```
+
+* Executar JSON-SERVER via terminal com o comando
+```
+json-server --watch db.json
+```
