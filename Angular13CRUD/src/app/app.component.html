@@ -44,7 +44,7 @@
         <!-- Preço -->
         <ng-container matColumnDef="preco">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Preço </th>
-          <td mat-cell *matCellDef="let row"> {{row.preco | currency}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.preco | currency : 'R$'}} </td>
         </ng-container>
 
         <!-- Descrição -->
