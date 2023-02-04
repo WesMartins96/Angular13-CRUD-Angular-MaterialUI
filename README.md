@@ -29,6 +29,7 @@ ng add @angular/material@12
 <hr>
 <p style="text-align: center; font-size:28px; font-family:Tahoma">Como Rodar?</p>
 <hr>
+
 * Para executar, use o comando
 ```
 ng serve -o
