@@ -17,6 +17,24 @@
       "descricao": "Banana nanica",
       "data": "2023-02-03T03:00:00.000Z",
       "id": 2
+    },
+    {
+      "produtoNome": "Abacate",
+      "categoria": "Frutas",
+      "qualidade": "Usado",
+      "preco": 8,
+      "descricao": "Abacate não fresco",
+      "data": "2023-02-03T03:00:00.000Z",
+      "id": 3
+    },
+    {
+      "produtoNome": "Manga",
+      "categoria": "Frutas",
+      "qualidade": "Novo",
+      "preco": 8.99,
+      "descricao": "Manga fresca do Brasil",
+      "data": "2023-02-03T03:00:00.000Z",
+      "id": 4
     }
   ],
   "comments": [

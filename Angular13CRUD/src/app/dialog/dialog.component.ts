@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -10,7 +11,7 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 })
 
 export class DialogComponent implements OnInit {
-  tempoSnackBar = 2;
+  tempoSnackBar = 3;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -20,7 +21,8 @@ export class DialogComponent implements OnInit {
   constructor(
     private formBuilder : FormBuilder,
     private api : ApiService,
-    private snackBar : MatSnackBar) { }
+    private snackBar : MatSnackBar,
+    private dialogRef : MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
@@ -41,6 +43,8 @@ export class DialogComponent implements OnInit {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
           })
+          this.produtoForm.reset();
+          this.dialogRef.close('salvar');
         },
         error:() => {
           this.snackBar.open('Erro ao adicionar o produto!', '',{
