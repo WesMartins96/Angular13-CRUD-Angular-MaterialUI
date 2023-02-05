@@ -5,6 +5,7 @@ import { ApiService } from './services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -13,9 +14,12 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  tempoSnackBar = 5;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   title = 'Angular13CRUD';
 
-  displayedColumns: string[] = ['produtoNome', 'categoria', 'data', 'qualidade', 'preco', 'descricao'];
+  displayedColumns: string[] = ['produtoNome', 'categoria', 'data', 'qualidade', 'preco', 'descricao', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,7 +27,8 @@ export class AppComponent implements OnInit{
 
   constructor(
     private dialog : MatDialog,
-    private api : ApiService){
+    private api : ApiService,
+    private snackBar : MatSnackBar){
 
   }
   ngOnInit(): void {
@@ -33,7 +38,11 @@ export class AppComponent implements OnInit{
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
-    });
+    }).afterClosed().subscribe(value => {
+      if (value === 'salvar') {
+        this.getAllProdutos();
+      }
+    })
   }
 
   getAllProdutos(){
@@ -44,10 +53,26 @@ export class AppComponent implements OnInit{
         this.dataSource.sort = this.sort;
       },
       error:(err)=> {
-        alert("Falha ao obter os registros!!")
+        this.snackBar.open('Falha ao carregar os produtos', '',{
+          duration: this.tempoSnackBar * 1000,
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        })
       }
     })
   }
+
+  editarProduto(row : any){
+    this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row
+    }).afterClosed().subscribe(value => {
+      if (value === 'atualizar') {
+        this.getAllProdutos();
+      }
+    })
+  }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -3,17 +3,17 @@
     {
       "produtoNome": "Caju",
       "categoria": "Frutas",
-      "qualidade": "Novo",
-      "preco": 25,
-      "descricao": "Caju fresquinho",
-      "data": "2023-02-03T03:00:00.000Z",
+      "qualidade": "Usado",
+      "preco": 5.89,
+      "descricao": "Caju de segunda mão",
+      "data": "2023-02-04T03:00:00.000Z",
       "id": 1
     },
     {
       "produtoNome": "Banana",
       "categoria": "Frutas",
       "qualidade": "Novo",
-      "preco": 16,
+      "preco": 7.89,
       "descricao": "Banana nanica",
       "data": "2023-02-03T03:00:00.000Z",
       "id": 2
