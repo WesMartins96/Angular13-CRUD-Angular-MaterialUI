@@ -73,6 +73,25 @@ export class AppComponent implements OnInit{
     })
   }
 
+  deletarProduto(id : number){
+    this.api.deletarProduto(id).subscribe({
+      next:(res) => {
+        this.snackBar.open('Produto deletado com sucesso!', '',{
+          duration: this.tempoSnackBar * 1000,
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        })
+        this.getAllProdutos();
+      },
+      error:() => {
+        this.snackBar.open('Erro ao deletar o produto!', '',{
+          duration: this.tempoSnackBar * 1000,
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        })
+      }
+    })
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
