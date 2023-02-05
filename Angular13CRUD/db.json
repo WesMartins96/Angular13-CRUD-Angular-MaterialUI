@@ -1,31 +1,31 @@
 {
   "produtoLista": [
     {
-      "produtoNome": "Caju",
-      "categoria": "Frutas",
-      "qualidade": "Usado",
-      "preco": 5.89,
-      "descricao": "Caju de segunda mão",
-      "data": "2023-02-04T03:00:00.000Z",
+      "produtoNome": "Playstation 5",
+      "categoria": "Consoles",
+      "qualidade": "Novo",
+      "preco": 4999.99,
+      "descricao": "Playstation 5 Lacrado na caixa",
+      "data": "2023-02-24T03:00:00.000Z",
       "id": 1
     },
     {
-      "produtoNome": "Banana",
-      "categoria": "Frutas",
-      "qualidade": "Novo",
-      "preco": 7.89,
-      "descricao": "Banana nanica",
-      "data": "2023-02-03T03:00:00.000Z",
+      "produtoNome": "GTX 550TI",
+      "categoria": "Peças para Computador",
+      "qualidade": "Usado",
+      "preco": 388.41,
+      "descricao": "2GB GDDR5 128Bit PCI Express 1.1 ",
+      "data": "2023-02-24T03:00:00.000Z",
       "id": 2
     },
     {
-      "produtoNome": "Manga",
-      "categoria": "Frutas",
+      "produtoNome": "Notebook ThinkPad",
+      "categoria": "Eletrônicos",
       "qualidade": "Novo",
-      "preco": 8.99,
-      "descricao": "Manga fresca do Brasil",
-      "data": "2023-02-03T03:00:00.000Z",
-      "id": 4
+      "preco": 7500.59,
+      "descricao": "Notebook será enviado da china",
+      "data": "2023-07-11T03:00:00.000Z",
+      "id": 3
     }
   ],
   "comments": [
